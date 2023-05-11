@@ -3,9 +3,10 @@
 }
 
 #navbar {
-  border: 1px solid black;
+  border: 0px solid black;
   max-width: 1280px;
   margin: auto;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 #firstNav {
   color: white;
@@ -30,8 +31,9 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
-  font-weight: bold;
+  font-weight:900;
   font-size: 15px;
+
 }
 #main {
   border: 0px solid black;
@@ -50,8 +52,25 @@
   align-items: center;
   list-style: none;
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: 900;
   font-size: 15px;
+}
+.nav_menu_links li {
+  position: relative;
+}
+.nav_menu_links li::after {
+  content: "";
+  height: 3px;
+  width: 0%;
+  background-color: #009688;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  transition: 0.5s;
+}
+.nav_menu_links li:hover::after {
+  width: 100%;
+  
 }
 #contactBtn {
   border: 2px solid green;
@@ -60,9 +79,72 @@
   border-radius: 50px;
   font-size: 18px;
 }
-.hamburger_menu{
-    display:none;
+.hamburger_menu {
+  display: none;
 }
+
+/* Navbar drop box */
+
+/* services */
+
+
+.services{
+  padding:2px;
+  padding-top:10px;
+  border:0px solid black;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  visibility: hidden;
+  position:absolute;
+  height:430px;
+  width:1200px;
+  margin:auto;
+  top:45px;
+  left:-300px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  
+ 
+}
+
+
+.nav_menu_links li:hover .services{
+  visibility: visible;
+  
+}
+.services>div{
+  border:0px solid black;
+  width:30%;
+  height:99%;
+
+
+  
+}
+
+.dropBox{
+  margin-top:5px;
+  padding:5px;
+  border:0px solid black;
+  height:50px; 
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+  cursor:pointer;
+  
+  
+
+}
+.dropBox p{
+  border:0px solid black;
+  width:90%;
+  text-align:justify;
+}
+.dropBox p:hover{
+  color:greenyellow;
+}
+
+
 
 @media all and (min-width: 770px) and (max-width: 1024px) {
   /* #navbar {
@@ -115,6 +197,9 @@
 }
 
 @media all and (min-width: 320px) and (max-width: 769px) {
+  #navbar {
+    position: relative;
+  }
   #firstNav {
     display: flex;
     justify-content: center;
@@ -128,7 +213,7 @@
     /* flex-wrap: wrap; */
     justify-content: center;
     align-items: center;
-    margin:auto;
+    margin: auto;
     gap: 20px;
   }
   #firstNav > div > div {
@@ -142,9 +227,28 @@
     font-weight: bold;
     font-size: 10px;
   }
-  #main{
-    padding-left:20px;
+  #main {
+    padding-left: 20px;
   }
+  .nav_links {
+    border: 1px solid black;
+    position: absolute;
+    width: 90%;
+    height: auto;
+    margin: auto;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-transform: uppercase;
+    text-align: justify;
+    top: 126px;
+  }
+  .nav_links > li {
+    padding: 10px;
+    border: 1px solid black;
+  }
+
   .nav_menu_links {
     width: 70%;
     border: 0px solid black;
@@ -155,7 +259,7 @@
     text-transform: uppercase;
     font-weight: bold;
     font-size: 10px;
-    display:none;
+    display: none;
   }
 
   .hamburger_menu {
@@ -168,5 +272,4 @@
   #hamburger {
     font-size: 40px;
   }
-
 }
